@@ -1,4 +1,7 @@
 import App from "./App";
+import Cart from "./pages/Cart";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
 
 const routes = [
   {
@@ -7,15 +10,15 @@ const routes = [
     children: [
       {
         index: true,
-        element: <h2></h2>,
+        element: <Home />,
       },
       {
         path: "cart",
-        // element: <CartView />,
+        element: <Cart />,
       },
       {
-        path: "shopping",
-        // element: <ShoppingView />,
+        path: "shop",
+        element: <Shop />,
       },
     ],
   },

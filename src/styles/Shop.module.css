@@ -1,0 +1,14 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.sectionTitle {
+  margin-block-end: var(--space-m);
+}
+.loadingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}

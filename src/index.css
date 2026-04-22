@@ -1,3 +1,103 @@
+@font-face {
+  font-family: "Outfit";
+  src:
+    url("./assets/fonts/Outfit-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Outfit-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src:
+    url("./assets/fonts/Outfit-Black.woff2") format("woff2"),
+    url("./assets/fonts/Outfit-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src:
+    url("./assets/fonts/Outfit-ExtraLight.woff2") format("woff2"),
+    url("./assets/fonts/Outfit-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src:
+    url("./assets/fonts/Outfit-ExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src:
+    url("./assets/fonts/Outfit-Light.woff2") format("woff2"),
+    url("./assets/fonts/Outfit-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src:
+    url("./assets/fonts/Outfit-Medium.woff2") format("woff2"),
+    url("./assets/fonts/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src:
+    url("./assets/fonts/Outfit-SemiBold.woff2") format("woff2"),
+    url("./assets/fonts/Outfit-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src:
+    url("./assets/fonts/Outfit-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Outfit-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src:
+    url("./assets/fonts/Outfit-Thin.woff2") format("woff2"),
+    url("./assets/fonts/Outfit-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Young Serif";
+  src:
+    url("./assets/fonts/YoungSerif-Regular.woff2") format("woff2"),
+    url("./assets/fonts/YoungSerif-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Color */
   --color-bg: #1b1b32;
@@ -5,6 +105,10 @@
   --color-accent: #f0c040;
   --color-text: #ffffff;
   --color-text-muted: #a9a9c8;
+
+  /* Font family */
+  --ff-body: "Outfit" system-ui, sans-serif;
+  --ff-heading: "Young Serif" system-ui, sans-serif;
 
   /* Font Size */
   --fs--2: clamp(0.6944rem, 0.6341rem + 0.3019vw, 0.8681rem);
@@ -28,4 +132,45 @@
   --space-xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
   --space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
   --space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
+}
+
+/* REST & BASE */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-0);
+  line-height: 1.5;
+  font-synthesis: none;
+  min-height: 100vh;
+  color: var(--color-text);
+}
+
+h1 {
+  font-family: var(--ff-heading);
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  appearance: none;
+  border: none;
 }

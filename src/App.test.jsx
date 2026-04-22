@@ -1,9 +1,8 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import routes from "./routes";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { createMemoryRouter, RouterProvider } from "react-router";
-import products from "./testData/products";
 
 const renderWithRouter = (initialEntries = ["/"]) => {
   const user = userEvent.setup();
@@ -42,5 +41,48 @@ describe("App", () => {
     expect(cartLink).toBeInTheDocument();
   });
 
+  it("should render home view when home link is clicked", async () => {
+    const user = renderWithRouter(["/shop"]);
 
+    const footer = screen.getByRole("contentinfo");
+    const homeLink = within(footer).getByRole("link", { name: /\//i });
+
+    await user.click(homeLink);
+
+    const homeHeading = await screen.findByRole("heading", {
+      name: /your favorite store, online/i,
+    });
+
+    expect(homeHeading).toBeInTheDocument();
+  });
+
+  it("should render shopping view when shop link is clicked", async () => {
+    const user = renderWithRouter(["/shop"]);
+
+    const footer = screen.getByRole("contentinfo");
+    const shopLink = within(footer).getByRole("link", { name: /shop/i });
+
+    await user.click(shopLink);
+
+    const shopHeading = await screen.findByRole("heading", {
+      name: /browse products/i,
+    });
+
+    expect(shopHeading).toBeInTheDocument();
+  });
+
+  it("should render cart view when cart link is clicked", async () => {
+    const user = renderWithRouter(["/shop"]);
+
+    const footer = screen.getByRole("contentinfo");
+    const cartLink = within(footer).getByRole("link", { name: /cart/i });
+
+    await user.click(cartLink);
+
+    const cartHeading = await screen.findByRole("heading", {
+      name: /your cart/i,
+    });
+
+    expect(cartHeading).toBeInTheDocument();
+  });
 });
